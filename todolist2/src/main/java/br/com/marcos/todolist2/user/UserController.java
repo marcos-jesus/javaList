@@ -16,7 +16,6 @@ public class UserController {
     @PostMapping("/")
     public ResponseEntity create(@RequestBody UserModel userModel) {
         var verifyUser = this.userRepository.findByUsername(userModel.getUsername());
-
         var verifyNome = this.userRepository.findByName(userModel.getName());
 
         if(verifyUser != null) {
